@@ -3,18 +3,97 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;500;600;700;800&family=Patua+One&display=swap');
 /*Aqui é um import do CDN, onde pegamos os mini incones de redes sociais*/
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css");
-
-*{/*zerando as margens*/
+*{/*aqui é a confioguração de todos os elementos da pagina e tambem está zerando as margens*/
   margin:0;
   padding:0;
+  list-style: none;
+  text-decoration:none;/*aqui esta tirando todos os sblinhados dos link do Home, conhecimento e demais*/
+
+
 }
+:root{/*aqui criamos variavei para as fontes*/
+    --font-primary :"Baloo Tamma 2", serif;
+    --font-secundary:"Josefin Slab", serif ;
+    --font-action:"Muli", serif;/* aqui é uma font para toda ação feita na pagina*/
+}
+
+.hamburguer{/*incone do hamburguer*/
+   
+    width: 2rem;
+    height: 2rem;
+    position: fixed;/*aqui é posição fixa*/
+    z-index: 100;/*aqui configura a profundidade do incone*/
+    right: 2rem;/*aqui direciona o incone para o canto direito da tela*/
+    top: 2rem;
+    display: flex;
+    flex-direction: column;/*aqui os incones ficam 1 abaixo do outro*/
+    justify-content: space-evenly;/*espalhando os elementos*/
+    cursor: pointer;/*p cursor vira uma maozinha quando passar sobre o incone hamburguer*/
+
+
+}
+.show-menu .hamburguer{
+    right: 16rem;
+}
+
+
+.line{
+    width: 100%;/*largura*/
+    height: .1rem;/*altura */
+    background-color:#fff;
+    box-shadow: 0.1rem 0.1rem 1px #000;/*aqui configura a sombra*/
+    transition: transform 1s;/*essa animação faz o X se transformar em hamburguer*/
+}
+.show-menu #line1{
+    transform: rotate(45deg) translate(.3rem, .30rem);/*aqui é a animação para quando clicar no hamburguer girar em sentido horario e  forma um X */
+    }
+
+.show-menu #line2{
+    opacity: 0;/*aqui é a animação para quando clicar no hamburguer desapareca*/
+    visibility: hidden;/*visibilidade oculta*/
+}
+.show-menu #line3{
+    transform: rotate(-45deg) translate(.3rem, -.30rem);/*aqui é a animação para quando clicar no hamburguer girar em sentido horario e  forma um X */
+    }
+
+.hamburguer span{/*aqui é a animação do icone fechar*/
+    position: absolute;
+    left: 3rem;
+    height: 2rem;
+    width: 6rem;
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    background-color:#800080;
+    color: #ffffff;
+    font-family: var(--font-action);
+    opacity: 0;
+
+}
+
+.hamburguer span::before{/*aqui é a configuração do incone X fechar*/
+/*aqui configura tambem o formato da seta que aparece na caixa fechar*/
+    content: "";
+    position: absolute;
+    border-right: .5rem solid #800080;
+    border-top: .5rem solid transparent;
+    border-left: .5rem solid transparent;
+    border-bottom: .5rem solid transparent;
+    left: -1rem;
+
+}
+.show-menu .hamburguer:hover span{/*aqui é para o efeito hover no span*/
+    opacity: 1;
+
+}
+
+
 header{
     width: 100%;
     height: 100vh;/*aqui se refere a adaptação da altura pagina quando abrir em qualquer tamanho de tela VH = altura da visualização*/
     overflow: hidden;/*desabilitando o overflow ele impede do cabeçalho passar o tamanho da janela*/
     position: relative;/*posição do header*/
 }
-
 
 .img-wrapper{/*configurando a imagem principal*/
     width: 100%;
@@ -58,7 +137,7 @@ top:30%;/*distancia do elemento em relação a borda superior*/
 .banner h1{
     color: #ffffff;
     font-size: 3.5rem;/* rem garante que a tamanho da letra vai seguir o tamanho da font pai que é 16px declarada tamanho padrao*/
-    font-family: "Baloo Tamma 2", serif;
+    font-family: var(--font-primary);
     font-weight: 200;
     text-shadow: .2rem .3rem 2px rgba(0,0,0,.4);/* sobra no texto*/
     line-height: 3.5rem;/*distancia entre os textos*/
@@ -68,7 +147,7 @@ top:30%;/*distancia do elemento em relação a borda superior*/
 }
 
 .banner p{
-    font-family:"Josefin Slab", serif ;
+    font-family: var (--font-secundary);
     color:#fff;
     font-size:2rem;
     text-shadow: .2rem .2rem rgba(0,0,0,.4);/* sobra no texto*/
@@ -79,7 +158,7 @@ top:30%;/*distancia do elemento em relação a borda superior*/
 
 
 .banner button{
-    font-family: "Muli", serif;
+    font-family: var(--font-action);
     color: #fff;
     font-size: 1.2rem;
     text-transform: uppercase;/* aqui todas as letras ficam maiuscula*/
@@ -102,4 +181,67 @@ top:30%;/*distancia do elemento em relação a borda superior*/
         transform: translateY(0) rotateY(0);
         opacity: 1;
     }
+}
+
+.sidebar{
+    width:20rem;
+    height: 100vh;
+    background-color: #ca98b0;
+    position: fixed;
+    top: 0;
+    right: -20rem;
+    transition: all 1s;/*aqui é o tempo de transição e a forma ao clicar no hamburgeur*/
+}
+.show-menu .sidebar{
+    right: 0;
+
+}
+
+.menu{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+.menu-item{
+    text-align: center;
+    margin-bottom: .5rem;
+}
+.menu-link{
+    font-family:var (--font-action);
+    font-size: 1.5rem;
+    color: #555;
+    transition: color 1s;
+}
+.menu-link:hover{
+    color: #580258
+
+}
+
+.social-media{
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;/*aqui coloca um espaço entre os icones das redes sociais*/
+}
+
+.social-media i{
+    background-color:#800080;
+    color:#fff;
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 2rem;/*como o incone é uma fonte, aqui aumenta o tamanho do icone*/
+    display:flex ;
+    justify-content: center;/*alinhando os incones na horizontal*/
+    align-items: center;/*alinhando os incones na vertical*/
+    border-radius: 50%;
+    transition: background-color 1s;/*aqui da uma transição de cor ao passar pelo incone das midias*/
+
+}
+
+.social-media i:hover{
+    background-color: #a044ff;/*aqui da uma mudança de cor ao passar o mouse*/
+
+
 }
