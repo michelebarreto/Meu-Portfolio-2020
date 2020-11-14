@@ -11,7 +11,7 @@
 
 
 }
-:root{/*aqui criamos variavei para as fontes*/
+:root{/*aqui criamos variaveis para as fontes*/
     --font-primary :"Baloo Tamma 2", serif;
     --font-secundary:"Josefin Slab", serif ;
     --font-action:"Muli", serif;/* aqui é uma font para toda ação feita na pagina*/
@@ -138,9 +138,9 @@ top:30%;/*distancia do elemento em relação a borda superior*/
     color: #ffffff;
     font-size: 3.5rem;/* rem garante que a tamanho da letra vai seguir o tamanho da font pai que é 16px declarada tamanho padrao*/
     font-family: var(--font-primary);
-    font-weight: 200;
+    font-weight: 150;
     text-shadow: .2rem .3rem 2px rgba(0,0,0,.4);/* sobra no texto*/
-    line-height: 3.5rem;/*distancia entre os textos*/
+    line-height: 3rem;/*distancia entre os textos*/
     margin-bottom: 2rem;
     opacity: 0;
     animation:moveBanner 1s 0.5s forwards;/* aqui o banner vai entrar com 7 segundos de atraso*/
@@ -235,7 +235,7 @@ top:30%;/*distancia do elemento em relação a borda superior*/
     display:flex ;
     justify-content: center;/*alinhando os incones na horizontal*/
     align-items: center;/*alinhando os incones na vertical*/
-    border-radius: 50%;
+    border-radius: 100%;
     transition: background-color 1s;/*aqui da uma transição de cor ao passar pelo incone das midias*/
 
 }
@@ -244,4 +244,113 @@ top:30%;/*distancia do elemento em relação a borda superior*/
     background-color: #a044ff;/*aqui da uma mudança de cor ao passar o mouse*/
 
 
+}
+.conhecimentos{/*aqui esta configurando as divisões do conhecimento na página criando um grid de 6 por 4*/
+    display: grid;
+    grid-template-columns:(10, 1fr);
+    grid-template-rows: repeat(5,5rem);
+    row-gap: 2rem;
+    
+}
+.conhecimento:nth-child(1){/*Aqui é o incone de analise de sistema*/
+    grid-column: 1 /4; /*começa na coluna 1 e termina na coluna 4*/
+    grid-row: 1 /5;  /*começa na linha 1 e termina na linha 4*/
+}
+.conhecimento:nth-child(2){/*Aqui é o incone de HTML/CSS*/
+    grid-column: 3 /5;/*começa na coluna 3 e termina na coluna 4*/
+    grid-row: 1 /4;  /*começa na linha 1 e termina na linha 4*/
+}
+.conhecimento:nth-child(3){/*Aqui é o incone de javascript*/
+    grid-column: 5 /5; /*começa na coluna 4 e termina na coluna 5*/
+    grid-row: 1 /4;  /*começa na linha 1 e termina na linha 4*/
+}
+.conhecimento:nth-child(4){/*Aqui é o incone de bootstrap*/
+    grid-column: 2 /3;/*começa na coluna 4 e termina na coluna 5*/
+    grid-row: 3 /3; /*começa na linha 3 e termina na linha 3*/
+}
+.conhecimento:nth-child(5){/*Aqui é o incone dp Git*/
+    grid-column: 1 /4; /*começa na coluna 1 e termina na coluna 5*/
+    grid-row: 5 /5;  /*começa na linha 6 e termina na linha 6*/
+}
+.conhecimento:nth-child(6){/*Aqui é o incone de node js*/
+    grid-column: 6 /6; /*começa na coluna 5 e termina na coluna 5*/
+    grid-row: 6 /3; /*começa na linha 3 e termina na linha 4*/
+}
+.conhecimento:nth-child(7){/*Aqui é o incone de Java*/
+    grid-column: 6 /6; /*começa na coluna 5 e termina na coluna 5*/
+    grid-row: 1 /4; /*começa na linha 1 e termina na linha 4*/
+}
+.conhecimento:nth-child(8){/*Aqui é o incone de Vue*/
+    grid-column: 3 /4; /*começa na coluna 3 e termina na coluna 4*/
+    grid-row: 6 /6;  /*começa na linha 6 e termina na linha 6*/
+}
+.conhecimento:nth-child(9){/*Aqui é o incone de Angular*/
+    grid-column: 5 /5; /*começa na coluna 4 e termina na coluna 4*/
+    grid-row: 6 /6;   /*começa na linha 6 e termina na linha 6*/
+}
+.conhecimento:nth-child(10){/*Aqui é o incone de React*/
+    grid-column: 6 /6; /*começa na coluna 5 e termina na coluna 5*/
+    grid-row: 5 /6;    /*começa na linha 6 e termina na linha 7*/
+}
+
+.sessao-conhecimentos{ /*aqui e a cor de funco do menu*/
+    background-color: #ffd7eb;
+}
+
+.sessao-header{
+    display: flex;
+    align-items:center;
+    justify-content: center;/*alinhamento vertical*/
+
+}
+.sessao-header h1{/*titulo conhecimento*/
+    font-family: var(--font-primary);
+    font-size:3rem;
+    color: #580258;
+    border-bottom: solid 3px #33001b;
+    margin-bottom: 3rem;
+}
+.conhecimento-header{
+    display: flex;
+    align-items: center;
+    color: #33001b;
+}
+.conhecimento-header i{
+    font-size: 3rem;/*incone do conhecimento*/
+ 
+
+}
+.conhecimento-header h3{
+    font-family: var(--font-secundary);
+    font-size: 1rem;
+    padding-left: .5rem;
+    
+}
+.conhecimento-text{
+    font-family: var(--font-secundary);
+    margin-top: 1rem;
+    
+}
+.conhecimentos-img-wrapper{
+    grid-column: 3 / 7;
+    grid-row: 2 / 6;
+    width: 100%;
+
+}
+.conhecimentos-img-wrapper img{
+    object-fit: cover;
+    width: 60%;
+    border-radius: 10rem;
+}
+
+
+.projetos{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card-img-wrapper{
+    border-radius: .10rem;
+    object-fit: cover;
+    width: 100%;
 }
