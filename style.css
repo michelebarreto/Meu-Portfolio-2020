@@ -253,11 +253,11 @@ top:30%;/*distancia do elemento em relação a borda superior*/
     
 }
 .conhecimento:nth-child(1){/*Aqui é o incone de analise de sistema*/
-    grid-column: 1 /4; /*começa na coluna 1 e termina na coluna 4*/
+    grid-column: 2 /4; /*começa na coluna 1 e termina na coluna 4*/
     grid-row: 1 /5;  /*começa na linha 1 e termina na linha 4*/
 }
 .conhecimento:nth-child(2){/*Aqui é o incone de HTML/CSS*/
-    grid-column: 3 /5;/*começa na coluna 3 e termina na coluna 4*/
+    grid-column: 4 /5;/*começa na coluna 3 e termina na coluna 4*/
     grid-row: 1 /4;  /*começa na linha 1 e termina na linha 4*/
 }
 .conhecimento:nth-child(3){/*Aqui é o incone de javascript*/
@@ -269,7 +269,7 @@ top:30%;/*distancia do elemento em relação a borda superior*/
     grid-row: 3 /3; /*começa na linha 3 e termina na linha 3*/
 }
 .conhecimento:nth-child(5){/*Aqui é o incone dp Git*/
-    grid-column: 1 /4; /*começa na coluna 1 e termina na coluna 5*/
+    grid-column: 2 /4; /*começa na coluna 1 e termina na coluna 5*/
     grid-row: 5 /5;  /*começa na linha 6 e termina na linha 6*/
 }
 .conhecimento:nth-child(6){/*Aqui é o incone de node js*/
@@ -353,4 +353,49 @@ top:30%;/*distancia do elemento em relação a borda superior*/
     border-radius: .10rem;
     object-fit: cover;
     width: 100%;
+    border-radius: 5rem;
+    opacity: .8;
+}
+.card{
+    width: 18rem;
+    height: 25rem;
+    position: relative;
+}
+
+.card-info{
+    
+    position: absolute;
+    bottom: 0;
+    padding: 2rem;
+    text-shadow: 0 0.1rem 0.3rem rgba(0,0,0,.4);
+
+}
+.card-info h2{
+    font-family: var(--font-secundary);
+    font-size: 1,5rem;
+    font-weight: 500;
+    color: #d310c9;
+}
+.card-info p{
+    font-family: var(--font-secundary);
+    color:rgb(32, 31, 31);
+    font-weight: 400;
+    width: 80%;
+}
+
+.card-info button{
+    
+    width: 8rem;
+    height: 2.5rem;
+    background-color: #ff0084;  /* aqui é para navegadores antigos */
+    background: -webkit-linear-gradient(to left, #33001b, #ff0084);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #952360, #ff0084); 
+    border-radius: .5rem;
+    font-family: var(--font-action);
+    font-size: 1rem;
+    border: none;
+}
+/*esta animação para quando o mouse passar sobre o booton*/
+.card:hover .card-info{
+    bottom: 1rem;
 }
