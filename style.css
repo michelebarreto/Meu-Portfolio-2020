@@ -96,6 +96,7 @@ header{
 }
 
 .img-wrapper{/*configurando a imagem principal*/
+    
     width: 100%;
     height: 100%;
     overflow: hidden;/*desabilitando o overflow ele impede do cabeçalho passar o tamanho da janela*/
@@ -108,7 +109,9 @@ width: 100%;
 height: 100%;
 object-fit: cover;/*a maneira que a imagem vai ser envelopada, no caso de cover a imagem  vai cobrir a div*/
 opacity: 0.5;/*aqui é para dar uma transparencia na imagem*/
-animation: zoom 25s;
+animation: zoom 15s;
+
+
 }
 
 
@@ -186,7 +189,7 @@ top:30%;/*distancia do elemento em relação a borda superior*/
 .sidebar{
     width:20rem;
     height: 100vh;
-    background-color: #ca98b0;
+    background-color: #e9bcd2;
     position: fixed;
     top: 0;
     right: -20rem;
@@ -294,13 +297,14 @@ top:30%;/*distancia do elemento em relação a borda superior*/
 }
 
 .sessao-conhecimentos{ /*aqui e a cor de funco do menu*/
-    background-color: #ffd7eb;
+    background-color: #e9bcd2;
 }
 
 .sessao-header{
     display: flex;
     align-items:center;
     justify-content: center;/*alinhamento vertical*/
+     background-color: #e9bcd2;
 
 }
 .sessao-header h1{/*titulo conhecimento*/
@@ -309,14 +313,19 @@ top:30%;/*distancia do elemento em relação a borda superior*/
     color: #580258;
     border-bottom: solid 3px #33001b;
     margin-bottom: 3rem;
+    
+    
 }
 .conhecimento-header{
     display: flex;
     align-items: center;
     color: #33001b;
+    
 }
 .conhecimento-header i{
     font-size: 3rem;/*incone do conhecimento*/
+    
+   
  
 
 }
@@ -325,28 +334,34 @@ top:30%;/*distancia do elemento em relação a borda superior*/
     font-size: 1rem;
     padding-left: .5rem;
     
+    
 }
 .conhecimento-text{
     font-family: var(--font-secundary);
     margin-top: 1rem;
+    
     
 }
 .conhecimentos-img-wrapper{
     grid-column: 3 / 7;
     grid-row: 2 / 6;
     width: 100%;
+    
+    
 
 }
 .conhecimentos-img-wrapper img{
     object-fit: cover;
     width: 60%;
     border-radius: 10rem;
+    box-shadow: 0 2rem 5rem rgba(79, 71, 190, 0.993)/*colocando sombra no fundo da imagem*/
 }
 
 
 .projetos{
     display: flex;
     justify-content: space-evenly;
+    background-color: #e9bcd2;
 }
 
 .card-img-wrapper{
@@ -382,11 +397,7 @@ top:30%;/*distancia do elemento em relação a borda superior*/
     font-weight: 400;
     width: 80%;
 }
-
-.card-info button{
-    
-    width: 8rem;
-    height: 2.5rem;
+.btn{
     background-color: #ff0084;  /* aqui é para navegadores antigos */
     background: -webkit-linear-gradient(to left, #33001b, #ff0084);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to left, #952360, #ff0084); 
@@ -395,7 +406,107 @@ top:30%;/*distancia do elemento em relação a borda superior*/
     font-size: 1rem;
     border: none;
 }
+
+
+
+.card-info button{
+    width: 8rem;
+    height: 2.5rem;
+}
 /*esta animação para quando o mouse passar sobre o booton*/
 .card:hover .card-info{
     bottom: 1rem;
+}
+.sessao-contato{
+    width: 100%;
+    height: 100vh;
+    background-color:#e9bcd2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contato-wrapper{
+    width: 60%;
+    height: 30rem;
+    display: flex;
+    box-shadow: 0 2rem 5rem rgba(0,0, 0, 0.5);
+  
+}
+
+.contato-left{
+    /*vai ocupar 355 do tamannho da caixa*/
+    width: 40%;
+    background: 
+    url(img/pexels-karolina-grabowska-5705968.jpg);
+    background-size: cover;
+    
+}
+.contato-rigth{
+    width: 65%;
+    background-color: #eee;
+    padding: 1rem 3rem 3rem 3rem;
+}
+.sessao-contato h1{
+    width: 100%;
+    text-align: center;
+    font-family: var(--font-primary);
+    color: #272727;
+    font-size: 3rem;
+    font-weight: lighter;
+    
+}
+.sessao-contato form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.field{
+    background: transparent;
+    border: none;
+    width: 20rem;
+    font-size: 1.5rem;
+    font-family: var(--font-secundary);
+    border-bottom: 2px dashed #636363;
+    height: 3rem;
+    outline: none;/*aqui tira a marcação do quadrado ao clicar*/
+
+}
+.input-group {
+    position: relative;
+}
+
+.input-group textarea {
+    padding-top: 1rem;
+    max-width: 25rem;
+    max-height: 3rem;
+}
+
+.field-label{
+    position: absolute;
+    left: 0;
+    top: 2rem;
+    font-family: var(--font-secundary);
+    text-transform: uppercase;/*todas as letras ficam maiuscula*/
+    transition: all 0.3s;/*aqui cria animação ao clicar no input*/
+}
+/*quando receber o foco o label tera um top 0*/
+.field:focus ~ label{
+    top: 0;
+    font-size: 1rem;
+
+}
+.field:focus{
+    border-bottom:  1px solid;
+}
+
+.btn-submit{
+    /*configuração do botao de enviar mensagem de contato*/
+    font-size: 1.2rem;
+    width: 100%;
+    height: 2rem;
+    text-transform: uppercase;
+    margin-top: 1rem;
+
 }
