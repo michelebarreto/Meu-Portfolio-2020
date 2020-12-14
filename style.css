@@ -8,8 +8,6 @@
   padding:0;
   list-style: none;
   text-decoration:none;/*aqui esta tirando todos os sblinhados dos link do Home, conhecimento e demais*/
-
-
 }
 :root{/*aqui criamos variaveis para as fontes*/
     --font-primary :"Baloo Tamma 2", serif;
@@ -33,14 +31,10 @@ html{
     flex-direction: column;/*aqui os incones ficam 1 abaixo do outro*/
     justify-content: space-evenly;/*espalhando os elementos*/
     cursor: pointer;/*p cursor vira uma maozinha quando passar sobre o incone hamburguer*/
-
-
 }
 .show-menu .hamburguer{
     right: 16rem;
 }
-
-
 .line{
     width: 100%;/*largura*/
     height: .1rem;/*altura */
@@ -72,7 +66,6 @@ html{
     color: #ffffff;
     font-family: var(--font-action);
     opacity: 0;
-
 }
 
 .hamburguer span::before{/*aqui é a configuração do incone X fechar*/
@@ -84,14 +77,11 @@ html{
     border-left: .5rem solid transparent;
     border-bottom: .5rem solid transparent;
     left: -1rem;
-
 }
 .show-menu .hamburguer:hover span{/*aqui é para o efeito hover no span*/
     opacity: 1;
 
 }
-
-
 header{
     width: 100%;
     height: 100vh;/*aqui se refere a adaptação da altura pagina quando abrir em qualquer tamanho de tela VH = altura da visualização*/
@@ -107,17 +97,13 @@ header{
     background-color: rgba(0,0,0,0.8);/* aqui é a cor de fundo da imagem, para a transparencia da imagem não ficar com o fundo branco*/
 }
 
-
 .img-wrapper img{/*aqui determina que a imagem se adapet as configuraçoes do img-wrapper*/
 width: 100%;
 height: 100%;
 object-fit: cover;/*a maneira que a imagem vai ser envelopada, no caso de cover a imagem  vai cobrir a div*/
 opacity: 0.5;/*aqui é para dar uma transparencia na imagem*/
 animation: zoom 15s;
-
-
 }
-
 
 @keyframes zoom{
     /*o @Keyframes serve para criar animações dentro do CSS, ZOOM é o nome que eu dei para a animação*/
@@ -127,8 +113,6 @@ animation: zoom 15s;
    100%{/* e com 100% a imagem vai para a escala de 1 que quer dizer 100%*/
        transform:scale(1) ;
    }
-
-
 }
 
 .banner{/*configuração do texto principal*/
@@ -137,8 +121,6 @@ left:15%;/*distancia do elemento em relação a borda esquerda*/
 /*right: ;distancia do elemento em relação a borda direita*/
 top:30%;/*distancia do elemento em relação a borda superior*/
 /*bottom: ;distancia do elemento em relação a borda inferior*/
-
-
 }
 
 .banner h1{
@@ -148,7 +130,7 @@ top:30%;/*distancia do elemento em relação a borda superior*/
     font-weight: 150;
     text-shadow: .2rem .3rem 2px rgba(0,0,0,.4);/* sobra no texto*/
     line-height: 3rem;/*distancia entre os textos*/
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     opacity: 0;
     animation:moveBanner 1s 0.5s forwards;/* aqui o banner vai entrar com 7 segundos de atraso*/
 }
@@ -158,11 +140,10 @@ top:30%;/*distancia do elemento em relação a borda superior*/
     color:#fff;
     font-size:2rem;
     text-shadow: .2rem .2rem rgba(0,0,0,.4);/* sobra no texto*/
-    margin-bottom: 2rem;
+    margin-bottom: 1px;
     opacity: 0;
     animation:moveBanner 1s 0.7s forwards;/* aqui o texto do paragrafo vai entrar com 7 segundos de atraso*/
 }
-
 
 .banner button{
     font-family: var(--font-action);
@@ -223,7 +204,6 @@ top:30%;/*distancia do elemento em relação a borda superior*/
 }
 .menu-link:hover{
     color: #580258
-
 }
 
 .social-media{
@@ -250,16 +230,14 @@ top:30%;/*distancia do elemento em relação a borda superior*/
 
 .social-media i:hover{
     background-color: #a044ff;/*aqui da uma mudança de cor ao passar o mouse*/
-
-
 }
 .conhecimentos{/*aqui esta configurando as divisões do conhecimento na página criando um grid de 6 por 4*/
     display: grid;
     grid-template-columns:(10, 1fr);
     grid-template-rows: repeat(5,5rem);
     row-gap: 2rem;
-    
-}
+  }
+
 .conhecimento:nth-child(1){/*Aqui é o incone de analise de sistema*/
     grid-column: 2 /4; /*começa na coluna 1 e termina na coluna 4*/
     grid-row: 1 /5;  /*começa na linha 1 e termina na linha 4*/
@@ -301,6 +279,42 @@ top:30%;/*distancia do elemento em relação a borda superior*/
     grid-row: 5 /6;    /*começa na linha 6 e termina na linha 7*/
 }
 
+@media all and (max-width:1700px){
+    img-wrapper,sessao-header,sessao-conhecimentos{
+    grid-column: 3 / 7;
+    grid-row: 2 / 6;
+    max-width: 100%;   
+    height: auto;
+       
+    }
+    conhecimentos-img-wrapper{
+    grid-column: 3 / 7;
+    grid-row: 2 / 6;
+    width: 100%;   
+}
+@media all and (min-width:400px){
+    img-wrapper,sessao-header,sessao-conhecimentos{
+    grid-column: 3 / 7;
+    grid-row: 2 / 6;
+    max-width: 100%;   
+    height: auto;
+       
+    }
+    conhecimentos-img-wrapper{
+    grid-column: 3 / 7;
+    grid-row: 2 / 6;
+    width: 100%;   
+}
+
+#perfil{
+    display: none;
+    font-size: 15px;
+    font-family: var(--font-action);
+    text-align:justify;
+    color: rgb(236, 226, 226);  
+    margin: 1px;
+}
+
 .sessao-conhecimentos{ /*aqui e a cor de funco do menu*/
     background-color: #e9bcd2;
 }
@@ -324,7 +338,6 @@ top:30%;/*distancia do elemento em relação a borda superior*/
     display: flex;
     align-items: center;
     color: #33001b;
-    
 }
 .conhecimento-header i{
     font-size: 3rem;/*incone do conhecimento*/
@@ -339,8 +352,7 @@ top:30%;/*distancia do elemento em relação a borda superior*/
 .conhecimento-text{
     font-family: var(--font-secundary);
     margin-top: 1rem;   
-    
-}
+ }
 .conhecimentos-img-wrapper{
     grid-column: 3 / 7;
     grid-row: 2 / 6;
@@ -501,17 +513,15 @@ top:30%;/*distancia do elemento em relação a borda superior*/
     height: 2rem;
     text-transform: uppercase;
     margin-top: 1rem;
-
 }
 .sessao-orcamento{
     width: 100%;
     height: 100vh;
-    background: url(/img/pexels-pixabay-247791.jpg);
+    background: url(./img/pexels-pixabay-247791.jpg);
     object-fit: cover;
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 .orcamento-wrapper{
     width: 60%;
@@ -520,7 +530,7 @@ top:30%;/*distancia do elemento em relação a borda superior*/
     border-radius: 10px;
     box-shadow: 0 0.1rem 0.3rem rgba(0,0,0,0.5);
     position: relative;
-    
+     
 }
 .preenchido{
     pointer-events: none;
@@ -539,7 +549,6 @@ top:30%;/*distancia do elemento em relação a borda superior*/
     font-size: 3rem;
     font-weight: lighter;
     box-shadow: 0 0.1rem 0.3rem rgba(0,0,0,0.5);
-
 }
 
 .sessao-orcamento form{
@@ -548,10 +557,8 @@ top:30%;/*distancia do elemento em relação a borda superior*/
     grid-template-columns: auto 1fr;
     column-gap: 2rem;
     row-gap: 2rem;
-    
-
+ 
 }
-
 .sessao-orcamento label{
     font-family: var(--font-secundary);
     font-size: 1.1rem;
@@ -601,7 +608,8 @@ footer{
 .social-list ul{
     display: flex;
 }
-#link-topo{
+
+#link-topo {
     position:fixed;
     right: 3rem;
     bottom: 3rem;
@@ -616,6 +624,5 @@ footer{
     color: #fff;
     border-radius: .3rem;
     box-shadow: 0 0.1rem 0.6rem #000000;
-    
-    
-}
+     
+ }

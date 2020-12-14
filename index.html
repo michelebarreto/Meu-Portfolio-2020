@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" media="all">
     <!--Aqui são os links de configuração do logo MB para funcionar em qualquer tamanho de tela-->
     <link rel="apple-touch-icon" size="180x180" href="img/apple-touch-icon.png">
     <link rel="icon" type="image/png" size="32x32" href="img/favicon-32x32.png">
@@ -32,8 +32,31 @@
             <div class="banner">
                 <h1>Web Developer Front End & Analista de Sistema</h1>
                 <p>Michele Barreto</p>
-                <button>Saiba mais</button>
-
+                <div id="texto" class="ocultar">
+                    <span id="perfil"> Trabalhei por mais de 10 anos na área administrativa e em um
+                        momento da minha vida precisei me reinventar, de tecnologia eu já gostava, então decidir me
+                        aprofundar e comecei a faculdade de Analise de Sistema e foi ai que conheci o mundo da
+                        programação.
+                        Meu primeiro contato com o Front End, foi através do projeto da {REPROGRAMA} e a partir dai não
+                        parei mais, um trabalho que gostei muito de fazer foi criar uma pagina de apoio e auxilio a
+                        mulheres vitimas de violência domestica, esse projeto orienta as mulheres, mostra a Lei Maria da
+                        Penha e divulga o número para denunciar o agressor e as medidas que devem ser tomadas para
+                        garantir a segurança da vitima e foi um prazer criar esse projeto.
+                        Atualmente sou graduada em Análise de Sistema e tenho me especializado na programação como Front
+                        End em HTML, CSS, JAVASCRIPT e suas frameworks, tenho feito cursos e Bootcamps, procuro todos os
+                        dias me capacitar e está pronta para os novos desafios que vão surgir.
+                        <ul>
+                        <li>{Bootcamp IGTI - Desenvolvedora de Software}</li>
+                        <li>{Bootcamp IGTI - Desenvolvedora Front End}</li>
+                        <li>{Desenvolvedora Front-End Jr }</li>
+                        <li>{Apaixonada por Tecnologia e pelo mundo digital }</li>
+                        <li>{Git e GitHub}</li>
+                        <li>{HTML, CSS, JavaScript, Bootstrap, Jquery, Nodejs, React, Angular, Vue, Python}</li>
+                        <li>{Experiencia com Atendimento Service-Desk}</li>
+                        </span></p>
+                        </ul>
+                </div>       
+                <button onclick="leiaMais ()" id="btnLeiaMais">Saiba mais</button>
             </div>
 
         </header>
@@ -212,7 +235,6 @@
                     <div class="card-info">
                         <h2>Pets Flix</h2>
                         <p>Projeto usando react, criando um canal com vídeos de cachorrinhos </p>
-                        <button class="btn">Saiba mais</button>
                     </div>
                 </div>
                 <div class="card">
@@ -226,7 +248,6 @@
                     <div class="card-info">
                         <h2>Site de Auxilio a Proteção da Mulher</h2>
                         <p>Projeto usando bootstrap e Javascript </p>
-                        <button class="btn">Saiba mais</button>
                     </div>
                 </div>
                 <div class="card">
@@ -240,11 +261,9 @@
                     <div class="card-info">
                         <h2>E commerce</h2>
                         <p>Projeto usando Html / Css/ JavaScript</p>
-                        <button class="btn">Saiba mais</button>
                     </div>
                 </div>
             </div>
-
     </div>
     </div>
     </section>
@@ -264,7 +283,6 @@
                 <div class="card-info">
                     <h2>Jogo da Memória</h2>
                     <p>Projeto usando HTML /CSS e JavaScript </p>
-                    <button class="btn">Saiba mais</button>
                 </div>
             </div>
             <div class="card">
@@ -278,21 +296,19 @@
                 <div class="card-info">
                     <h2>Site de Hamburgueria</h2>
                     <p>Projeto usando HTML /CSS e JavaScript </p>
-                    <button class="btn">Saiba mais</button>
                 </div>
             </div>
             <div class="card">
                 <div class="card-img-wrapper"></div>
                 <video width="320" height="240" controls="controls">
-                    <source src="./img/Poesias - Google Chrome 2020-11-14 21-45-11.mp4" type="video/mp4">
+                    <source src="./img/Clone Netflix - Google Chrome 2020-11-29 17-29-19.mp4" type="video/mp4">
                     <object data="" width="320" height="240">
                         <embed width="320" height="240" src="">
                     </object>
                 </video>
                 <div class="card-info">
-                    <h2>Site de Poesias</h2>
+                    <h2>Meu Favoritos Netflix</h2>
                     <p>Projeto usando HTML e CSS </p>
-                    <button class="btn">Saiba mais</button>
                 </div>
             </div>
         </div>
@@ -334,14 +350,14 @@
                 <input type="checkbox" name="js" id="js">
                 <label>Layout</label>
                 <div group-layout>
-                <div>
-                    <input type="radio" name="layout" id="layout-sim">
-                    <label for="layout-sim">Preciso de um layout</label>
-                </div>
-                <div>
-                    <input type="radio" name="layout" id="layout-nao">
-                    <label for="layout-nao">Já tenho um layout</label>
-                </div>
+                    <div>
+                        <input type="radio" name="layout" id="layout-sim">
+                        <label for="layout-sim">Preciso de um layout</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="layout" id="layout-nao">
+                        <label for="layout-nao">Já tenho um layout</label>
+                    </div>
                 </div>
                 <div>
                     <label for="prazo">Prazo</label>
@@ -356,21 +372,22 @@
         </div>
     </section>
     <footer>
-    <div class="footer-content">
-    <p>Copyright &copy;2020, Michele Barreto 💓</p>
-    <div class="social-list">
-    <ul>
-    <li><a href="https://www.linkedin.com/in/michele-barreto-ti/"><i class="fab fa-linkedin"></i></a></li>
-    <li><a href="https://github.com/michelebarreto"><i class="fab fa-git"></i></a></li>
-    <li><a href="https://www.instagram.com/michelesantosb1/"><i class="fab fa-instagram"></i></a></li>
-    </ul>
-    </div>
-    </div>
-    
+        <div class="footer-content">
+            <p>Copyright &copy;2020, Michele Barreto 💓</p>
+            <div class="social-list">
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/michele-barreto-ti/"><i class="fab fa-linkedin"></i></a>
+                    </li>
+                    <li><a href="https://github.com/michelebarreto"><i class="fab fa-git"></i></a></li>
+                    <li><a href="https://www.instagram.com/michelesantosb1/"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
     </footer>
-   <a href="#home" id="link-topo">
-   <i class="fas fa-arrow-up"></i>
-   </a>
+    <a href="#home" id="link-topo">
+        <i class="fas fa-arrow-up"></i>
+    </a>
     </div>
 
 </body>

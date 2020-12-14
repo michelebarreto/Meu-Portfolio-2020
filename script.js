@@ -32,3 +32,18 @@ function atualizarPreco(){
 
 
 }
+//função do botão saiba mais
+function leiaMais(){
+    var perfil = document.getElementById("perfil");
+    var btnLeiaMais =document.getElementById("btnLeiaMais");
+
+ if(perfil.style.display === "none"){
+     perfil.style.display="inline";
+     btnLeiaMais.innerHTML="Fechar";
+    
+ }else{
+     perfil.style.display="none";  
+     btnLeiaMais.innerHTML="Saiba Mais";
+ }
+
+}
